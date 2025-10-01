@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCCA - Contabilidade Inteligente para o Sucesso do seu Negócio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        'primary-dark': '#4A49C7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .smooth-transition { transition: all 0.3s ease-in-out; }
+        .gradient-bg { background: linear-gradient(135deg, #5D5CDE 0%, #4A49C7 100%); }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .animate-fade-in { animation: fadeIn 0.6s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white smooth-transition">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full top-0 z-50 smooth-transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center space-x-3">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/e544162134687154d17a955b5f4cf89a3a49cfe18833bc4847ed4da9317a1628?w=192&h=60" alt="SCCA Logo" class="h-10 w-auto">
+                        <h1 class="text-2xl font-bold text-white">SCCA Contabilidade e Administração</h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" onclick="showPage('home')" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary smooth-transition">Início</a>
+                    <a href="#" onclick="showPage('services')" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary smooth-transition">Serviços</a>
+                    <a href="#" onclick="showPage('plans')" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary smooth-transition">Planos</a>
+                    <a href="#" onclick="showPage('about')" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary smooth-transition">Sobre</a>
+                    <a href="#" onclick="showPage('contact')" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary smooth-transition">Contato</a>
+                    <a href="#" onclick="showPage('faq')" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary smooth-transition">FAQ</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="showPage('home')" class="block px-3 py-2 text-gray-700 dark:text-gray-300">Início</a>
+                <a href="#" onclick="showPage('services')" class="block px-3 py-2 text-gray-700 dark:text-gray-300">Serviços</a>
+                <a href="#" onclick="showPage('plans')" class="block px-3 py-2 text-gray-700 dark:text-gray-300">Planos</a>
+                <a href="#" onclick="showPage('about')" class="block px-3 py-2 text-gray-700 dark:text-gray-300">Sobre</a>
+                <a href="#" onclick="showPage('contact')" class="block px-3 py-2 text-gray-700 dark:text-gray-300">Contato</a>
+                <a href="#" onclick="showPage('faq')" class="block px-3 py-2 text-gray-700 dark:text-gray-300">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        <!-- Home Page -->
+        <div id="home-page" class="page animate-fade-in">
+            <!-- Hero Section -->
+            <section class="gradient-bg text-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Contabilidade Inteligente para o Sucesso do seu Negócio
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">
+                        Oferecemos soluções completas, desde a abertura do seu CNPJ até a gestão fiscal do dia a dia, garantindo sua tranquilidade e economia com impostos.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button onclick="showPage('contact')" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 smooth-transition text-base">
+                            Abra sua Empresa sem Custo
+                        </button>
+                        <button onclick="showPage('contact')" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary smooth-transition text-base">
+                            Peça um Orçamento sem Compromisso
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Benefits Section -->
+            <section class="py-16 bg-gray-50 dark:bg-gray-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold text-center mb-12">Por que escolher a SCCA?</h2>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-handshake text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Atendimento Próximo e Digital</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Suporte personalizado com tecnologia moderna</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Mais de uma Década de Experiência</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Desde 2008 cuidando do seu negócio</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-cogs text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Soluções Completas de A a Z</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Todos os serviços que sua empresa precisa</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-chart-line text-white text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2">Economia Tributária</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Planejamento para reduzir seus impostos</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How it Works -->
+            <section class="py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold text-center mb-12">Como Funciona</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                            <h3 class="text-xl font-semibold mb-4">Análise do seu perfil</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Definimos o melhor regime tributário para sua empresa</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                            <h3 class="text-xl font-semibold mb-4">Cuidamos da burocracia</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Abertura ou migração sem complicações para você</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                            <h3 class="text-xl font-semibold mb-4">Gestão contínua</h3>
+                            <p class="text-gray-600 dark:text-gray-400">CNPJ pronto e gestão contábil mensal garantida</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Services -->
+            <section class="py-16 bg-gray-50 dark:bg-gray-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-3xl font-bold text-center mb-12">Nossos Principais Serviços</h2>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover smooth-transition">
+                            <i class="fas fa-building text-primary text-3xl mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Abertura de Empresa</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">MEI, EI, LTDA e S.A. sem custos</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover smooth-transition">
+                            <i class="fas fa-calculator text-primary text-3xl mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Contabilidade Mensal</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Gestão completa e relatórios</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover smooth-transition">
+                            <i class="fas fa-file-invoice text-primary text-3xl mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Gestão Fiscal</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Impostos e declarações em dia</p>
+                        </div>
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg card-hover smooth-transition">
+                            <i class="fas fa-users text-primary text-3xl mb-4"></i>
+                            <h3 class="text-lg font-semibold mb-2">Departamento Pessoal</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Folha de pagamento completa</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="py-16">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold mb-12">O que nossos clientes dizem</h2>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg">
+                        <i class="fas fa-quote-left text-primary text-3xl mb-4"></i>
+                        <p class="text-lg italic mb-6">"Com a ajuda deles, organizei as finanças da minha empresa e agora tenho tempo para focar nos meus clientes."</p>
+                        <p class="font-semibold">- Maria Silva, Empresária</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="gradient-bg text-white py-16">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Pronto para começar?</h2>
+                    <p class="text-xl mb-8">Fale agora com um especialista e descubra como podemos ajudar sua empresa</p>
+                    <button onclick="showPage('contact')" class="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 smooth-transition text-base">
+                        Fale Agora com um Especialista
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services-page" class="page hidden animate-fade-in">
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold mb-6">Nossos Serviços</h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-400">Soluções completas para todas as necessidades da sua empresa</p>
+                    </div>
+
+                    <!-- Legalização e Abertura -->
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold mb-8 text-primary">Legalização e Abertura de Negócios</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-building text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Abertura de empresas</h3>
+                                <p class="text-gray-600 dark:text-gray-400">MEI, EI, LTDA e S.A.</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-exchange-alt text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Migração de MEI para ME</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Processo completo e sem burocracia</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-user-tie text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Assessoria para troca de contador</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Transição sem problemas</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-chart-bar text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Estudo de viabilidade</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Análise completa do seu negócio</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-percentage text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Definição do regime tributário</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Escolha do mais adequado para sua empresa</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-certificate text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Obtenção de alvarás e licenças</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Municipais, bombeiros, sanitárias e ambientais</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gestão Contábil -->
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold mb-8 text-primary">Gestão Contábil e Fiscal</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-calculator text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Contabilidade mensal e completa</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Gestão completa das suas finanças</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-file-alt text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Escrituração contábil e fiscal</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Todos os livros em conformidade</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-file-invoice-dollar text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Apuração de impostos</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Cálculo e emissão das guias</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-clipboard-check text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Declarações obrigatórias</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Entrega de todas as obrigações</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-chart-line text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Relatórios gerenciais</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Balancetes e análises financeiras</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-piggy-bank text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Planejamento tributário</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Redução legal da carga de impostos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Departamento Pessoal -->
+                    <div class="mb-16">
+                        <h2 class="text-3xl font-bold mb-8 text-primary">Departamento Pessoal e RH</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-users text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Folha de pagamento completa</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Gerenciamento total da folha</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-user-plus text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Admissões e demissões</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Processos e controle de férias</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-calculator text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Encargos trabalhistas</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Cálculo preciso de todos os encargos</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-shield-alt text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">eSocial e SST</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Administração completa</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviços Complementares -->
+                    <div>
+                        <h2 class="text-3xl font-bold mb-8 text-primary">Serviços Complementares</h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-award text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Registro em conselhos</h3>
+                                <p class="text-gray-600 dark:text-gray-400">CREA, CREMEB, CRC e outros</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-gavel text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Assessoria para licitações</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Participação em processos licitatórios</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-digital-tachograph text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Certificado digital</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Emissão e renovação</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                                <i class="fas fa-trademark text-primary text-2xl mb-4"></i>
+                                <h3 class="text-xl font-semibold mb-3">Registro de marcas</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Proteção da sua marca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Plans Page -->
+        <div id="plans-page" class="page hidden animate-fade-in">
+            <section class="py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold mb-6">Planos e Pacotes</h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-400">Escolha o plano ideal para sua empresa</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Plano Empreendedor -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 card-hover smooth-transition">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold mb-2">Plano Empreendedor</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">Ideal para empresas de serviço sem funcionários</p>
+                                <div class="text-4xl font-bold text-primary mb-2">R$ 99</div>
+                                <p class="text-gray-500">/mês</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Contabilidade mensal</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Emissão de impostos</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Suporte online</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Abertura de empresa gratuita</span>
+                                </div>
+                            </div>
+                            <button onclick="showPage('contact')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark smooth-transition text-base">
+                                Escolher Plano
+                            </button>
+                        </div>
+
+                        <!-- Plano Negócios -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 card-hover smooth-transition border-2 border-primary relative">
+                            <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm">
+                                Mais Popular
+                            </div>
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold mb-2">Plano Negócios</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">Ideal para empresas em crescimento com até 5 funcionários</p>
+                                <div class="text-4xl font-bold text-primary mb-2">R$ 199</div>
+                                <p class="text-gray-500">/mês</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Tudo do plano anterior</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Gestão de folha de pagamento</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Conciliação bancária</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Gerente de conta dedicado</span>
+                                </div>
+                            </div>
+                            <button onclick="showPage('contact')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark smooth-transition text-base">
+                                Escolher Plano
+                            </button>
+                        </div>
+
+                        <!-- Plano Corporativo -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 card-hover smooth-transition">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold mb-2">Plano Corporativo</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">Ideal para empresas com maior demanda</p>
+                                <div class="text-4xl font-bold text-primary mb-2">R$ 399</div>
+                                <p class="text-gray-500">/mês</p>
+                            </div>
+                            <div class="space-y-3 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Tudo do plano anterior</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Relatórios financeiros personalizados</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Planejamento tributário avançado</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Consultoria estratégica</span>
+                                </div>
+                            </div>
+                            <button onclick="showPage('contact')" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark smooth-transition text-base">
+                                Escolher Plano
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Precisa de algo personalizado para sua empresa?</p>
+                        <button onclick="showPage('contact')" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-8 py-3 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 smooth-transition text-base">
+                            Solicitar Plano Personalizado
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page hidden animate-fade-in">
+            <section class="py-20">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold mb-6">Nossa Trajetória de Sucesso a Serviço do seu Negócio</h1>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-lg">
+                            <h2 class="text-2xl font-bold mb-6 text-primary">Nossa História</h2>
+                            <p class="text-lg leading-relaxed mb-6">
+                                Em 16 de fevereiro de 2008 surge a SCCA, com o objetivo de oferecer soluções contábeis completas e personalizadas para empresas de todos os portes. Desde então, temos nos dedicado a ser mais que um escritório de contabilidade - somos parceiros estratégicos do crescimento dos nossos clientes.
+                            </p>
+                            <p class="text-lg leading-relaxed">
+                                Somos especialistas em contabilidade digital, ajudando empreendedores a focar no que realmente importa: o crescimento dos seus negócios. Nossa experiência de mais de uma década nos permite oferecer soluções inovadoras e eficientes.
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-primary">Nossa Missão</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Simplificar a gestão contábil e fiscal das empresas, oferecendo soluções tecnológicas e atendimento personalizado para que nossos clientes possam focar no crescimento dos seus negócios.
+                                </p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+                                <h3 class="text-xl font-bold mb-4 text-primary">Nossa Visão</h3>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Ser reconhecida como a principal referência em contabilidade digital, sendo a primeira escolha dos empreendedores que buscam eficiência e tranquilidade na gestão fiscal.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-primary to-primary-dark text-white p-8 rounded-lg text-center">
+                            <h3 class="text-2xl font-bold mb-4">Nossos Valores</h3>
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div>
+                                    <i class="fas fa-heart text-3xl mb-3"></i>
+                                    <h4 class="font-semibold mb-2">Compromisso</h4>
+                                    <p class="text-sm opacity-90">Dedicação total ao sucesso dos nossos clientes</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-lightbulb text-3xl mb-3"></i>
+                                    <h4 class="font-semibold mb-2">Inovação</h4>
+                                    <p class="text-sm opacity-90">Sempre buscando soluções modernas e eficientes</p>
+                                </div>
+                                <div>
+                                    <i class="fas fa-handshake text-3xl mb-3"></i>
+                                    <h4 class="font-semibold mb-2">Confiança</h4>
+                                    <p class="text-sm opacity-90">Relacionamentos duradouros baseados na transparência</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold mb-6">Pronto para fazer parte da nossa história?</h3>
+                            <button onclick="showPage('contact')" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary-dark smooth-transition text-base">
+                                Entre em Contato
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page hidden animate-fade-in">
+            <section class="py-20">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold mb-6">Entre em Contato</h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-400">Estamos aqui para ajudar sua empresa a crescer</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-6">Envie sua mensagem</h2>
+                            <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Nome completo</label>
+                                    <input type="text" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:border-transparent text-base">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">E-mail</label>
+                                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:border-transparent text-base">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Telefone</label>
+                                    <input type="tel" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:border-transparent text-base">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Mensagem</label>
+                                    <textarea rows="4" required class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 focus:ring-2 focus:ring-primary focus:border-transparent text-base"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark smooth-transition font-semibold text-base">
+                                    Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div>
+                            <h2 class="text-2xl font-bold mb-6">Fale diretamente conosco</h2>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">Telefone</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">(11) 9999-9999</p>
+                                        <a href="tel:+5511999999999" class="text-primary hover:underline">Ligar agora</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fab fa-whatsapp text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">WhatsApp</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">(11) 9999-9999</p>
+                                        <a href="https://wa.me/5511999999999" target="_blank" class="text-primary hover:underline">Conversar no WhatsApp</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">E-mail</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">contato@scca.com.br</p>
+                                        <a href="mailto:contato@scca.com.br" class="text-primary hover:underline">Enviar e-mail</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">Endereço</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">
+                                            Rua Exemplo, 123<br>
+                                            Centro - São Paulo/SP<br>
+                                            CEP: 01000-000
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start">
+                                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-clock text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold mb-1">Horário de Atendimento</h3>
+                                        <p class="text-gray-600 dark:text-gray-400">
+                                            Segunda a Sexta: 8h às 18h<br>
+                                            Sábado: 8h às 12h
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- FAQ Page -->
+        <div id="faq-page" class="page hidden animate-fade-in">
+            <section class="py-20">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold mb-6">Perguntas Frequentes</h1>
+                        <p class="text-xl text-gray-600 dark:text-gray-400">Tire suas dúvidas sobre nossos serviços</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <button onclick="toggleFAQ(1)" class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 smooth-transition">
+                                <span>Quanto tempo leva para abrir minha empresa?</span>
+                                <i id="faq-icon-1" class="fas fa-chevron-down smooth-transition"></i>
+                            </button>
+                            <div id="faq-content-1" class="hidden px-6 pb-4">
+                                <p class="text-gray-600 dark:text-gray-400">O processo de abertura de empresa geralmente leva entre 5 a 15 dias úteis, dependendo do tipo de empresa e da cidade onde será registrada. Cuidamos de toda a burocracia para agilizar o processo.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <button onclick="toggleFAQ(2)" class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 smooth-transition">
+                                <span>A abertura é realmente gratuita ou existem custos?</span>
+                                <i id="faq-icon-2" class="fas fa-chevron-down smooth-transition"></i>
+                            </button>
+                            <div id="faq-content-2" class="hidden px-6 pb-4">
+                                <p class="text-gray-600 dark:text-gray-400">A abertura da empresa é totalmente gratuita em nossos honorários. Existem apenas as taxas governamentais obrigatórias, que variam conforme o tipo de empresa e localização. Informamos todos os custos com transparência antes de iniciar o processo.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <button onclick="toggleFAQ(3)" class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 smooth-transition">
+                                <span>Vocês atendem empresas de outras cidades?</span>
+                                <i id="faq-icon-3" class="fas fa-chevron-down smooth-transition"></i>
+                            </button>
+                            <div id="faq-content-3" class="hidden px-6 pb-4">
+                                <p class="text-gray-600 dark:text-gray-400">Sim! Atendemos empresas de todo o Brasil através de nossa plataforma digital. Todo o processo pode ser feito remotamente, com a mesma qualidade e eficiência do atendimento presencial.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <button onclick="toggleFAQ(4)" class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 smooth-transition">
+                                <span>Preciso ter um certificado digital?</span>
+                                <i id="faq-icon-4" class="fas fa-chevron-down smooth-transition"></i>
+                            </button>
+                            <div id="faq-content-4" class="hidden px-6 pb-4">
+                                <p class="text-gray-600 dark:text-gray-400">O certificado digital é obrigatório para algumas operações, como emissão de notas fiscais eletrônicas. Oferecemos o serviço de emissão e renovação de certificados digitais para facilitar sua vida empresarial.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <button onclick="toggleFAQ(5)" class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 smooth-transition">
+                                <span>Como funciona a troca de contador?</span>
+                                <i id="faq-icon-5" class="fas fa-chevron-down smooth-transition"></i>
+                            </button>
+                            <div id="faq-content-5" class="hidden px-6 pb-4">
+                                <p class="text-gray-600 dark:text-gray-400">Facilitamos todo o processo de transição. Cuidamos da documentação necessária, solicitamos os arquivos do contador anterior e garantimos que não haja interrupção nos seus processos contábeis e fiscais.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                            <button onclick="toggleFAQ(6)" class="w-full px-6 py-4 text-left font-semibold flex justify-between items-center hover:bg-gray-50 dark:hover:bg-gray-700 smooth-transition">
+                                <span>Qual a diferença entre os planos oferecidos?</span>
+                                <i id="faq-icon-6" class="fas fa-chevron-down smooth-transition"></i>
+                            </button>
+                            <div id="faq-content-6" class="hidden px-6 pb-4">
+                                <p class="text-gray-600 dark:text-gray-400">Nossos planos são estruturados conforme o porte e necessidades da sua empresa. O Plano Empreendedor é ideal para empresas menores, o Plano Negócios inclui gestão de funcionários, e o Plano Corporativo oferece serviços avançados como planejamento tributário personalizado.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Não encontrou a resposta que procurava?</p>
+                        <button onclick="showPage('contact')" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary-dark smooth-transition text-base">
+                            Entre em Contato
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://pfst.cf2.poecdn.net/base/image/e544162134687154d17a955b5f4cf89a3a49cfe18833bc4847ed4da9317a1628?w=192&h=60" alt="SCCA Logo" class="h-8 w-auto">
+                        <h3 class="text-2xl font-bold text-primary">SCCA</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Contabilidade inteligente para o sucesso do seu negócio.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary smooth-transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary smooth-transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary smooth-transition">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-white smooth-transition">Abertura de Empresa</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-white smooth-transition">Contabilidade</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-white smooth-transition">Departamento Pessoal</a></li>
+                        <li><a href="#" onclick="showPage('services')" class="hover:text-white smooth-transition">Planejamento Tributário</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Empresa</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" onclick="showPage('about')" class="hover:text-white smooth-transition">Sobre Nós</a></li>
+                        <li><a href="#" onclick="showPage('plans')" class="hover:text-white smooth-transition">Planos</a></li>
+                        <li><a href="#" onclick="showPage('faq')" class="hover:text-white smooth-transition">FAQ</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="hover:text-white smooth-transition">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>(11) 9999-9999</li>
+                        <li>contato@scca.com.br</li>
+                        <li>São Paulo - SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SCCA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full mx-4">
+            <div class="text-center">
+                <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
+                <h3 class="text-2xl font-bold mb-4">Mensagem Enviada!</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-6">Recebemos sua mensagem e entraremos em contato em breve.</p>
+                <button onclick="closeModal()" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark smooth-transition">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Page navigation
+        function showPage(pageName) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageName + '-page');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                // Add animation class
+                setTimeout(() => {
+                    targetPage.classList.add('animate-fade-in');
+                }, 10);
+            }
+            
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.add('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // FAQ toggle
+        function toggleFAQ(index) {
+            const content = document.getElementById(`faq-content-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        }
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Show success modal
+            document.getElementById('success-modal').classList.remove('hidden');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
